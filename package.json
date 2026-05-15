@@ -1,0 +1,52 @@
+{
+  "name": "@ethitrust/sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript/Node SDK for the Ethitrust org-escrows API",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepare": "pnpm run build",
+    "test": "node --test test/*.test.mjs",
+    "example": "tsx examples/basic.ts"
+  },
+  "keywords": [
+    "ethitrust",
+    "escrow",
+    "sdk",
+    "api",
+    "typescript"
+  ],
+  "author": "Ethitrust",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.1.2",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "tsx": "^4.22.0",
+    "typescript": "^5.6.3"
+  }
+}
