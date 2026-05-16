@@ -5,7 +5,7 @@
 
 // ───── Enums ─────────────────────────────────────────────────────────────────
 
-export type EscrowType = 'onetime' | 'milestone' | 'recurring';
+export type EscrowType = 'onetime';
 
 export type EscrowStatus =
   | 'invited'
@@ -32,12 +32,6 @@ export type CounterStatus =
   | 'accepted'
   | 'rejected';
 export type RiskSeverity = 'low' | 'medium' | 'high';
-export type MilestoneStatus =
-  | 'pending'
-  | 'in_progress'
-  | 'delivered'
-  | 'completed'
-  | 'disputed';
 
 // ───── Shared sub-types ──────────────────────────────────────────────────────
 
@@ -60,29 +54,6 @@ export interface EscrowVolumePoint {
   total_amount: number;
 }
 
-export interface MilestoneRequest {
-  title: string;
-  description?: string | null;
-  amount: number;
-  due_date?: string | null;
-  /** Defaults to 48 on the server. */
-  inspection_hrs?: number;
-}
-
-export interface MilestoneResponse {
-  id: string;
-  escrow_id: string;
-  title: string;
-  description: string | null;
-  amount: number;
-  due_date: string | null;
-  inspection_hrs: number;
-  status: MilestoneStatus;
-  delivered_at: string | null;
-  completed_at: string | null;
-  sort_order: number;
-}
-
 // ───── Requests ──────────────────────────────────────────────────────────────
 
 export interface OrganizationInitializeEscrowRequest {
@@ -102,7 +73,6 @@ export interface OrganizationInitializeEscrowRequest {
   dispute_window?: number;
   /** Defaults to 'buyer'. */
   who_pays_fees?: FeePayer;
-  milestones?: MilestoneRequest[] | null;
 }
 
 export interface ListOrgEscrowsParams {

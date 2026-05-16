@@ -33,12 +33,8 @@ const escrow = await client.orgEscrows.create({
   title: 'Website redesign',
   amount: 5000,
   currency: 'ETB',
-  escrow_type: 'milestone',
+  escrow_type: 'onetime',
   who_pays_fees: 'split',
-  milestones: [
-    { title: 'Wireframes',     amount: 1500 },
-    { title: 'Final delivery', amount: 3500 },
-  ],
 });
 ```
 
@@ -53,7 +49,7 @@ const escrow = await client.orgEscrows.create({
 | `maxRetries`     | `2`                      | Retries for transient failures (GET / `429` / `5xx`). |
 | `fetch`          | global `fetch`           | Custom fetch implementation. |
 | `defaultHeaders` | `{}`                     | Extra headers on every request. |
-| `userAgent`      | `@ethitrust/sdk/1.0.0 node` | Override the User-Agent. |
+| `userAgent`      | `@ethitrust/sdk/1.1.0 node` | Override the User-Agent. |
 
 ## API surface
 

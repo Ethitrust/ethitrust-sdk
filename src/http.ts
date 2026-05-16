@@ -68,7 +68,7 @@ export class HttpClient {
     this.fetchImpl = fImpl.bind(globalThis);
     this.defaultHeaders = {
       Accept: 'application/json',
-      'User-Agent': opts.userAgent ?? '@ethitrust/sdk/1.0.0 node',
+      'User-Agent': opts.userAgent ?? '@ethitrust/sdk/1.1.0 node',
       ...opts.defaultHeaders,
     };
   }

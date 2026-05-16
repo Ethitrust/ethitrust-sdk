@@ -17,12 +17,8 @@ async function main() {
       title: 'Website redesign',
       amount: 5000,
       currency: 'ETB',
-      escrow_type: 'milestone',
+      escrow_type: 'onetime',
       who_pays_fees: 'split',
-      milestones: [
-        { title: 'Wireframes', amount: 1500 },
-        { title: 'Final delivery', amount: 3500 },
-      ],
     });
     console.log('Created escrow', created.id, 'status:', created.status);
 
